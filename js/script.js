@@ -1,32 +1,18 @@
 function darkMode() {
-	var darkMode = getCookie("darkmode");
+	var darkMode = getCookie("darkMode");
 	if(darkMode) {
-		document.cookie = "darkmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+		document.cookie = "darkMode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+		document.body.className = document.body.className.replace("dark", "");
 	} else {
-		document.cookie = "darkmode=1; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+		document.cookie = "darkMode=true; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+		document.body.classList.add("dark");
 	}
 }
 
-var darkMode = getCookie("darkmode");
-if(darkMode == "1") {
-	document.body.classList.add('dark');
-}
-
-function displayCookies() {
-	var fname=getCookie("darkmode");
-	if (fname==null) {fname="";}
-	if (fname!="") {fname="darkmode="+fname;}
-	alert (fname);
-}
-
-function getCookie(name) {
-	var nameEQ = name + "=";
-	//alert(document.cookie);
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1);
-		if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length,c.length);
+window.onload = function checkDark() {
+	if(document.cookie.indexOf('darkMode=')) {
+		document.body.className = document.body.className.replace("dark", "");
+	} else {
+		document.body.classList.add("dark");
 	}
-	return null;
-} 
+}
