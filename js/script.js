@@ -1,11 +1,11 @@
 function darkMode() {
-	document.cookie = "darkmode=1; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+	var darkMode = getCookie("darkmode");
+	if(darkMode!="") {
+		document.cookie = "darkmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	} else {
+		document.cookie = "darkmode=1; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+	}
 }
-
-function delDarkMode() {
-	document.cookie = "darkmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-}
-
 
 function displayCookies() {
 	var fname=getCookie("darkmode");
