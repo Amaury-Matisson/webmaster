@@ -9,14 +9,6 @@ function darkMode() {
 	}
 }
 
-window.onload = function checkDark() {
-	if(document.cookie.indexOf('darkMode=')) {
-		document.body.className = document.body.className.replace("dark", "");
-	} else {
-		document.body.classList.add("dark");
-	}
-}
-
 function getCookie(name) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
@@ -28,5 +20,17 @@ function getCookie(name) {
 	return null;
 }
 
-const clickid = urlParams.get('clickid')
-console.log(clickid);
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const clickid = urlParams.get('clickid');
+
+window.onload = function checkDark() {
+	if(document.cookie.indexOf('darkMode=')) {
+		document.body.className = document.body.className.replace("dark", "");
+	} else {
+		document.body.classList.add("dark");
+	}
+	
+	var offerButtons = document.querySelectorAll('[href="offer"]');
+	offerButtons.forEach(elem => elem.href = "https://track.ultravpn.com/5d02892a4faea/click/" + clickid);
+}
