@@ -3,7 +3,7 @@ function darkMode() {
 }
 
 function delDarkMode() {
-	document.cookie = "darkmode=; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+	document.cookie = "darkmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 }
 
 
