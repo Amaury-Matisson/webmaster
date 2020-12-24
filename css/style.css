@@ -237,7 +237,7 @@ header .logo svg {height:var(--lms);}
 main {flex-grow:1; display:flex; flex-direction:column; position:relative;}
 .background {position:absolute; width:100%; height:100%;}
 
-.eye {width:var(--hs);}
+.eye {width:var(--bs);}
 .eye circle {fill:var(--pc); animation:eye-move 5s infinite ease-in-out;}
 
 .box {padding:var(--ms); border-radius:var(--s-rad); background-color:var(--wc); box-shadow:var(--shadow); display:flex; align-items:center; flex-direction:column;}
