@@ -20,9 +20,9 @@ function getCookie(name) {
 	return null;
 }
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const clickid = urlParams.get('clickid');
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+var clickid = urlParams.get('clickid');
 
 window.onload = function checkDark() {
 	if(document.cookie.indexOf('darkMode=')) {
@@ -32,5 +32,12 @@ window.onload = function checkDark() {
 	}
 	
 	var offerButtons = document.querySelectorAll('[href="offer"]');
-	offerButtons.forEach(elem => elem.href = "https://track.ultravpn.com/5d02892a4faea/click/" + clickid);
+	offerButtons.forEach(elem => {
+		if(clickid != null) {
+			ext = clickid;
+		} else {
+			ext = "default";
+		}
+		elem.href = "https://track.ultravpn.com/5d02892a4faea/click/" + ext;
+	});
 }

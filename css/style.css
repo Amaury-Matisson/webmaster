@@ -12,7 +12,7 @@ span {font-family:inherit;}
 
 :root {
 	/* COLORS */
-	--primary:0,0,219;
+	--primary:255,134,0;
 	--pc:rgba(var(--primary),1);		/* pc :		Primary Color */
 	--pc50:rgba(var(--primary),.5);
 	--pc25:rgba(var(--primary),.25);
