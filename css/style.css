@@ -68,6 +68,7 @@ body.dark {
 	--tc75:rgba(200,200,200,.75);
 	--tc50:rgba(200,200,200,.5);
 	--tc25:rgba(200,200,200,.25);
+	--shadow:0 2px 20px var(--bc);
 }
 
 .f {display:flex;}
@@ -240,6 +241,8 @@ main {flex-grow:1; display:flex; flex-direction:column;}
 [onclick="darkMode()"] svg #turn circle {transition:transform var(--tt); transform-origin:center;}
 body.dark [onclick="darkMode()"] svg #turn path {opacity:0;}
 body.dark [onclick="darkMode()"] svg #turn circle {transform:scale(0);}
+[onclick="darkMode()"] svg {transition:transform .2s;}
+body.dark [onclick="darkMode()"] svg {transform: translateY(-1px);}
 
 .blow-effect {position:relative;}
 .blow-effect:before,
@@ -258,3 +261,9 @@ body.dark [onclick="darkMode()"] svg #turn circle {transform:scale(0);}
 	0% {transform:scale(0); opacity:1;}
 	100% {transform:scale(1); opacity:0;}
 }
+
+*::-webkit-scrollbar {width:var(--ts); height:var(--ts);}
+*::-webkit-scrollbar-track {background-color:transparent;}
+*::-webkit-scrollbar-thumb {background-color:var(--pc25);}
+*::-webkit-scrollbar-thumb:hover {background-color:var(--pc);}
+::selection {background:var(--pc); color:#fff;}
