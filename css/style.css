@@ -55,6 +55,7 @@ span {font-family:inherit;}
 }
 
 body.dark {
+	--pc10:rgba(var(--primary),.25);
     --light:6,6,6;
 	--lc:rgba(var(--light),1);
 	--lc75:rgba(var(--light),.75);
@@ -234,6 +235,11 @@ main {flex-grow:1; display:flex; flex-direction:column;}
 
 .box {padding:var(--ms); border-radius:var(--s-rad); background-color:var(--wc); box-shadow:var(--shadow); display:flex; align-items:center; flex-direction:column;}
 .icon {width:var(--bs); height:var(--bs); background-color:var(--pc10); border-radius:100%; padding:var(--tls);}
+
+[onclick="darkMode()"] svg #turn path {transition:opacity var(--tt) var(--tt);}
+[onclick="darkMode()"] svg #turn circle {transition:transform var(--tt); transform-origin:center;}
+body.dark [onclick="darkMode()"] svg #turn path {opacity:0;}
+body.dark [onclick="darkMode()"] svg #turn circle {transform:scale(0);}
 
 .blow-effect {position:relative;}
 .blow-effect:before,
